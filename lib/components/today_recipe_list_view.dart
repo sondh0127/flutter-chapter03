@@ -12,7 +12,6 @@ class TodayRecipeListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(recipes);
     return Padding(
       padding: const EdgeInsets.only(
         left: 16,

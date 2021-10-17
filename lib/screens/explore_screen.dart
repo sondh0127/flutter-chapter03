@@ -1,4 +1,5 @@
 import 'package:chapter03/api/mock_fooderlich_service.dart';
+import 'package:chapter03/components/friend_post_list_view.dart';
 import 'package:chapter03/components/today_recipe_list_view.dart';
 import 'package:chapter03/models/models.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,17 @@ class ExploreScreen extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<ExploreData> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           final recipes = snapshot.data?.todayRecipes ?? [];
-          return TodayRecipeListView(recipes: recipes);
+          final friendPosts = snapshot.data?.friendPosts ?? [];
+          return ListView(
+            children: [
+              TodayRecipeListView(recipes: recipes),
+              const SizedBox(
+                height: 16,
+              ),
+              FriendPostListView(friendPosts: friendPosts)
+            ],
+            scrollDirection: Axis.vertical,
+          );
         } else {
           return const Center(
             child: CircularProgressIndicator(),
