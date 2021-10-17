@@ -1,4 +1,5 @@
 import 'package:chapter03/screens/explore_screen.dart';
+import 'package:chapter03/screens/recipes_screen.dart';
 import 'package:flutter/material.dart';
 import 'components/components.dart';
 
@@ -14,8 +15,7 @@ class _HomePageState extends State<HomePage> {
 
   static List<Widget> pages = <Widget>[
     ExploreScreen(),
-    // TODO: Replace with RecipesScreen
-    Container(color: Colors.green),
+    RecipesScreen(),
     Container(color: Colors.blue),
   ];
 
