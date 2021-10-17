@@ -17,7 +17,6 @@ class RecipesScreen extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           return RecipesGridView(recipes: snapshot.data ?? []);
         } else {
-          // 6
           return const Center(child: CircularProgressIndicator());
         }
       },
